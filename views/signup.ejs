@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1>
+  <%
+  if (  err != ''){%>
+        <%= err %>
+  <%}
+  %>
+  </h1>
+ <form action="/signup" method="POST">
+
+            <div class="form-body">
+                <label>firstname:</label>
+                <input type="text" placeholder="enter your first name" name="fname" >
+            </div>
+            
+            <div class="form-body">
+                <label >email:</label>
+                <input type="email" placeholder="enter your email" name="email" value="<%= typeof email !='undefined' ?email : ''   %>" >
+            </div>
+            <div class="form-body">
+                <label>password</label>
+                <input type="password" placeholder="enter your password" name="password" >
+            </div>
+            <div class="form-body">
+                <label>confirm password</label>
+                <input type="password" placeholder="enter password" name="c_password" >
+            </div>
+            
+            <div class="form-body">
+                <input type="submit" value="submit" id="submit">
+            </div>
+        </form>
+  </div>
+
+</body>
+</html>
